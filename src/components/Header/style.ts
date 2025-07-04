@@ -20,6 +20,9 @@ export const Container = styled.header`
     li {
       margin-right: 24px;
     }
+    .button_mobile {
+        display: none;
+      }
   }
 
   .tokenWrapper {
@@ -56,13 +59,18 @@ export const Container = styled.header`
         }
 
         &_container {
+          border: none;
           border-left: solid 4px transparent;
           display: flex;
           align-items: center;
+          background-color: transparent;
 
-          font-family: ${({theme}) => theme.roboto.family};
+          &:focus {
+            outline: 3px solid ${({ theme }) => theme.colors.buttonFocus};
+          }
+
+          font-family: ${({ theme }) => theme.roboto.family};
           font-weight: 400;
-
 
           img {
             margin-right: 12px;
@@ -75,6 +83,41 @@ export const Container = styled.header`
             background-color: ${({ theme }) => theme.colors.popoverHover};
           }
         }
+      }
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    .buttonWrapper {
+      .button_one {
+        display: none;
+      }
+      .button_two {
+        display: none;
+      }
+       .button_three {
+        display: none;
+      }
+      .button_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+
+        button{
+          img{
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .tokenWrapper {
+      .token {
+        right: 20px;
+        width: 212px;
+        height: 150px
       }
     }
   }

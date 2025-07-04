@@ -3,16 +3,17 @@ import { ButtonDefault } from "./style"
 
 type Props = {
     title: string
+    description?: string
     type: "submit" | "button" | "reset"
     children?: React.ReactNode
     onClick?: () => void 
 }
 
-const Button = ({title, type, children, onClick}: Props) => {
+const Button = ({title, description, type, children, onClick}: Props) => {
 
     return(
-        <ButtonDefault onClick={onClick} type={type}>
-            {title}
+        <ButtonDefault title={title} onClick={onClick} type={type}>
+            {description}
             {children}
         </ButtonDefault>
     )

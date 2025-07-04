@@ -1,11 +1,18 @@
 import Image from "next/image";
 import { Container } from "./style";
-import Link from "next/link";
 import Button from "../Button";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import { Url } from "next/dist/shared/lib/router/router";
 
 const Header = () => {
   const [tokenVisible, setTokenVisible] = useState(false);
+  const router = useRouter();
+
+   const handleNavigation = (path: Url) => {
+    router.push(path);
+    setTokenVisible(false);
+  };
 
   return (
     <>
@@ -21,34 +28,51 @@ const Header = () => {
           </h1>
           <nav>
             <ul className="buttonWrapper">
-              <li>
-                <Link href="/">
-                  <Button type="button" title="Quem somos" />
-                </Link>
+              <li className="button_one">
+                  <Button
+                    onClick={() => handleNavigation("/quem-somos")}
+                    type="button"
+                    title="Quem somos"
+                    description="Quem somos"
+                  />
               </li>
-              <li>
-                <Link href="/">
-                  <Button type="button" title="Ajuda" />
-                </Link>
+              <li className="button_two">
+                  <Button type="button" description="Ajuda" title="Ajuda" />
               </li>
-              <li>
-                <Link href="/">
+              <li className="button_three">
                   <Button
                     onClick={() => {
                       setTokenVisible(!tokenVisible);
                     }}
                     type="button"
                     title="Entrar"
+                    description="Entrar"
                   >
                     <Image
-                      alt="Logo Lacrei Saúde"
+                      alt="Icone de seta"
                       src="arrow_down.svg"
                       width={24}
                       height={16}
                     />
                     {tokenVisible}
                   </Button>
-                </Link>
+              </li>
+              <li className="button_mobile">
+                  <Button
+                    onClick={() => {
+                      setTokenVisible(!tokenVisible);
+                    }}
+                    title="entrar"
+                    type="button"
+                  >
+                    <Image
+                      alt="Icone de Pessoa"
+                      src="person.svg"
+                      width={26}
+                      height={26}
+                    />
+                    {tokenVisible}
+                  </Button>
               </li>
             </ul>
           </nav>
@@ -57,25 +81,25 @@ const Header = () => {
           <div className="tokenWrapper">
             <div className="token">
               <div className="label">
-                <div className="label_container">
+                <button type="button" title="Entrar como Paciente" className="label_container">
                   <Image
                     height={24}
                     width={24}
-                    alt="Perfil profissional"
+                    alt="Imagem indicando Paciente"
                     src="person.svg"
                   />
                   Paciente
-                </div>
+                </button>
                 <div className="divider" />
-                <div className="label_container">
+                <button type="button" title="Entrar como Profissional" className="label_container">
                   <Image
                     height={24}
                     width={24}
-                    alt="Perfil profissional"
+                    alt="Imagem indicando Profissional"
                     src="medical.svg"
                   />
                   Profissional
-                </div>
+                </button>
               </div>
             </div>
           </div>
