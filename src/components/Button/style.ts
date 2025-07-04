@@ -8,7 +8,7 @@ export const ButtonDefault = styled.button`
   font-weight: bold;
   font-size: ${({ theme }) => theme.roboto.base};
 
-  width: 112px;
+  width: 157px;
   height: 48px;
   padding: 12px;
   border-radius: 8px;

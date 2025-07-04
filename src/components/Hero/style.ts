@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  height: 80vh;
+  height: 800px;
 `;
 
 export const HeroContainer = styled.div`

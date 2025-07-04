@@ -8,11 +8,11 @@ const Hero = () => {
       <HeroContainer>
         <Image
           alt="Dois homens deitados juntos em um sofá, um deles deitado no colo do outro, em um momento de afeto"
-          src="/hero.webp"
+          src="/hero.avif"
           fill
+          priority
           objectFit="cover"
           style={{ filter: "brightness(0.4) contrast(0.8)" }}
-          quality={100}
         ></Image>
         <HeroTitle>
           <h1>Olá, você está na Lacrei Saúde!</h1>
@@ -23,8 +23,16 @@ const Hero = () => {
           </p>
         </HeroTitle>
         <HeroButton>
-            <Button description="Sou Paciente" title="Botão para ir para aba de pacientes" type="button"/>
-            <Button description="Sou Profissional" title="Botão para ir para aba de profissionais" type="button"/>
+          <Button
+            description="Sou Paciente"
+            title="Botão para ir para aba de pacientes"
+            type="button"
+          />
+          <Button
+            description="Sou Profissional"
+            title="Botão para ir para aba de profissionais"
+            type="button"
+          />
         </HeroButton>
       </HeroContainer>
     </Section>

@@ -29,7 +29,7 @@ const Header = () => {
             <Image
               alt="Logo Lacrei Saúde"
               src="logo-lacrei.svg"
-              width={200}
+              width={202}
               height={24}
             ></Image>
           </Link>
@@ -101,7 +101,7 @@ const Header = () => {
                   />
                   Paciente
                 </button>
-                <div className="divider" />
+                <div className="divider"></div>
                 <button
                   type="button"
                   title="Entrar como Profissional"
