@@ -9,11 +9,15 @@ export const theme = {
     black: "#131313",
     popoverHover: "#DFF2ED",
     buttonFocus: "#4D8ACB",
+    heroTitle: "#9CE2B2",
+    heroDescription: "#DFF2ED",
   },
   headline: {
     family: "Nunito",
     base: "32px",
     small: "24px",
+    smallMobile: "16px",
+    xl:"48px"
   },
   roboto: {
     family: "Roboto",

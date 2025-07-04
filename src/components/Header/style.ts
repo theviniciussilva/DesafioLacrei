@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
+interface ModalProps {
+  isVisible: boolean;
+}
+
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.gradient};
   padding: 24px;
-  /* position: sticky; */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   .headerWrapper {
     margin: 0 auto;
@@ -12,6 +19,12 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    img {
+      &:focus {
+        outline: 2px solid ${({ theme }) => theme.colors.buttonFocus};
+      }
+    }
   }
 
   .buttonWrapper {
@@ -21,67 +34,55 @@ export const Container = styled.header`
       margin-right: 24px;
     }
     .button_mobile {
-        display: none;
-      }
+      display: none;
+    }
   }
 
-  .tokenWrapper {
+  .token {
     position: absolute;
-    top: 65px;
-    left: 0;
+    top: 84px;
+    right: 354px;
 
-    display: flex;
-    justify-content: flex-end;
-
-    margin-top: 24px;
-    width: 100%;
+    width: 240px;
     height: 148px;
+    padding: 16px;
+    background-color: ${({ theme }) => theme.colors.white};
 
-    .token {
-      position: relative;
-      top: 0;
-      right: 354px;
+    border: 1px solid ${({ theme }) => theme.colors.grayBorder};
+    border-radius: 8px;
+    .label {
+      display: grid;
+      height: 100%;
 
-      width: 240px;
-      padding: 16px;
+      .divider {
+        height: 1px;
+        padding: 10px;
+        border-bottom: solid 1px ${({ theme }) => theme.colors.grayBorder};
+      }
 
-      border: 1px solid ${({ theme }) => theme.colors.grayBorder};
-      border-radius: 8px;
+      &_container {
+        border: none;
+        border-left: solid 4px transparent;
+        display: flex;
+        align-items: center;
+        background-color: ${({ theme }) => theme.colors.white};
 
-      .label {
-        display: grid;
-        height: 100%;
-
-        .divider {
-          height: 1px;
-          padding: 10px;
-          border-bottom: solid 1px ${({ theme }) => theme.colors.grayBorder};
+        &:focus {
+          outline: 3px solid ${({ theme }) => theme.colors.buttonFocus};
         }
 
-        &_container {
-          border: none;
-          border-left: solid 4px transparent;
-          display: flex;
-          align-items: center;
-          background-color: transparent;
+        font-family: ${({ theme }) => theme.roboto.family};
+        font-weight: 400;
 
-          &:focus {
-            outline: 3px solid ${({ theme }) => theme.colors.buttonFocus};
-          }
+        img {
+          margin-right: 12px;
+          margin-left: 8px;
+        }
 
-          font-family: ${({ theme }) => theme.roboto.family};
-          font-weight: 400;
-
-          img {
-            margin-right: 12px;
-            margin-left: 8px;
-          }
-
-          &:hover {
-            cursor: pointer;
-            border-left: solid 4px ${({ theme }) => theme.colors.greenHovered};
-            background-color: ${({ theme }) => theme.colors.popoverHover};
-          }
+        &:hover {
+          cursor: pointer;
+          border-left: solid 4px ${({ theme }) => theme.colors.greenHovered};
+          background-color: ${({ theme }) => theme.colors.popoverHover};
         }
       }
     }
@@ -95,7 +96,7 @@ export const Container = styled.header`
       .button_two {
         display: none;
       }
-       .button_three {
+      .button_three {
         display: none;
       }
       .button_mobile {
@@ -105,8 +106,8 @@ export const Container = styled.header`
         height: 40px;
         width: 40px;
 
-        button{
-          img{
+        button {
+          img {
             margin: 0;
           }
         }
@@ -114,11 +115,24 @@ export const Container = styled.header`
     }
 
     .tokenWrapper {
+      top: 5px;
       .token {
         right: 20px;
         width: 212px;
-        height: 150px
+        height: 150px;
       }
     }
   }
+`;
+
+export const Modal = styled.div<ModalProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 `;
