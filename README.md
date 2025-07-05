@@ -123,4 +123,11 @@ Promova um preview estável para produção
 ##### Abordagem mobile-first com breakpoints baseados em conteúdo. Imagens AVIF para redução de ~50% no tamanho (melhoria de LCP e performance).
 
 ### Testes Unitários
-##### Foco em componentes críticos (Jest + Testing Library), validando: renderização, interações e roles ARIA para acessibilidade.
+##### Foco em componentes críticos (Jest + Testing Library), validando: renderização, interações e roles ARIA para acessibilidade.     
+
+
+
+#Link Do Deploy
+```
+https://desafio-lacrei-phi.vercel.app/
+```
