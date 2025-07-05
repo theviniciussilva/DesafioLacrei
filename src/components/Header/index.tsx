@@ -26,18 +26,30 @@ const Header = () => {
       <Container>
         <div className="headerWrapper">
           <Link href="/">
-            <Image
-              alt="Logo Lacrei Saúde"
-              src="logo-lacrei.svg"
-              width={202}
-              height={24}
-            ></Image>
+            <picture>
+              <source
+                className="logo_mobile"
+                srcSet="/logo-lacrei-mobile.svg"
+                media="(max-width: 768px)"
+                type="image/svg+xml"
+                width={134}
+                height={16}
+              />
+              <source srcSet="/logo-lacrei.svg" type="image/svg+xml" />
+              <Image
+                alt="Logo Lacrei Saúde"
+                src="/logo-lacrei.svg"
+                width={202}
+                height={24}
+                priority
+              />
+            </picture>
           </Link>
           <nav>
             <ul className="buttonWrapper">
               <li className="button_one">
                 <Button
-                  onClick={() => handleNavigation("/quem-somos")}
+                  onClick={() => handleNavigation("/about")}
                   type="button"
                   title="Quem somos"
                   description="Quem somos"
@@ -57,11 +69,23 @@ const Header = () => {
                 >
                   <Image
                     alt="Icone de seta"
-                    src="arrow_down.svg"
+                    src="/arrow_down.svg"
                     width={24}
                     height={16}
                   />
-                  {tokenVisible}
+                </Button>
+              </li>
+              <li className="button_mobile">
+                <Button
+                  title="entrar"
+                  type="button"
+                >
+                  <Image
+                    alt="Icone de Pessoa"
+                    src="/help.svg"
+                    width={26}
+                    height={26}
+                  />
                 </Button>
               </li>
               <li className="button_mobile">
@@ -74,11 +98,10 @@ const Header = () => {
                 >
                   <Image
                     alt="Icone de Pessoa"
-                    src="person.svg"
+                    src="/person.svg"
                     width={26}
                     height={26}
                   />
-                  {tokenVisible}
                 </Button>
               </li>
             </ul>
@@ -97,7 +120,7 @@ const Header = () => {
                     height={24}
                     width={24}
                     alt="Imagem indicando Paciente"
-                    src="person.svg"
+                    src="/person.svg"
                   />
                   Paciente
                 </button>
@@ -111,7 +134,7 @@ const Header = () => {
                     height={24}
                     width={24}
                     alt="Imagem indicando Profissional"
-                    src="medical.svg"
+                    src="/medical.svg"
                   />
                   Profissional
                 </button>

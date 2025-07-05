@@ -42,6 +42,7 @@ export const Container = styled.header`
     position: absolute;
     top: 84px;
     right: 354px;
+    z-index: 1;
 
     width: 240px;
     height: 148px;
@@ -89,6 +90,14 @@ export const Container = styled.header`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    position: static;
+
+    .headerWrapper{
+      .logo_mobile{
+       
+      }
+    }
+
     .buttonWrapper {
       .button_one {
         display: none;
