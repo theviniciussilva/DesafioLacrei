@@ -1,40 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Desafio Lacrei
 
-## Getting Started
+Descrição breve do seu projeto. Adicione 1-2 frases explicando o propósito principal.
 
-First, run the development server:
+### Pré-requisitos
+
+- Node.js 14.x ou superior
+- npm 6.x+ ou yarn 1.22+
+- Git
+
+### Instalação Local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-projeto.git
+
+# Acesse o diretório
+cd seu-projeto
+
+# Instale as dependências
+npm install
+# ou
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🛠 Desenvolvimento
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Execute o servidor de desenvolvimento:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+bash
+```
+npm run dev
+# ou
+yarn dev
+```
+O aplicativo estará disponível (por padrão) em http://localhost:3000.  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# 🏗 Build e Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build para Produção
 
-## Learn More
+```
+npm run build
+# ou
+yarn build
+```
+  
+# Deploy na Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## O deploy na Vercel é automático via Git:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Push para a branch `main` dispara deploy de produção</small>  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Push para outras branches cria um Preview deployment  
 
-## Deploy on Vercel
+# 🧪 Testes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Executando Testes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+bash
+```
+# Testes unitários
+npm test
+```
+
+
+## 📊 Test Coverage
+
+| Categoria       | Cobertura |
+|-----------------|-----------|
+| **Statements**  | 94.39%    |
+| **Branches**    | 96.82%    |
+| **Functions**   | 91.37%    |
+| **Lines**       | 94.39%    |
+
+![Captura de tela de 2025-07-05 04-54-24](https://github.com/user-attachments/assets/9da1207f-86b3-41e8-ab3b-b458bf5c9a5d)  
+
+
+
+# 🔙 Estratégia de Rollback
+
+## Rollback Simples
+
+Acesse Vercel Dashboard
+
+Navegue até seu projeto → "Deployments"
+
+Encontre a versão estável anterior
+
+Clique em "..." → "Instant Rollback"  
+
+
+
+## Rollback Funcional
+
+### Usando Preview Deploys:
+
+Mantenha sempre um preview deployment estável
+
+Em caso de problemas:
+
+Promova um preview estável para produção    
+
+
+# Tomadas de Decições  
+
+### Styled Components + SSR
+##### Configuração via Babel e _document.js para evitar FOUC e melhorar SEO. Plugin otimiza classes (minificação e determinismo).
+
+### Tema Global
+##### Centralização de variáveis de design (cores/fontes) para consistência visual, manutenção simplificada e suporte a futuros temas (ex.: dark mode). Cores validadas para acessibilidade (WCAG).
+
+### Cabeçalho Fixo
+##### position: fixed para navegação persistente durante scroll, melhorando usabilidade e performance (sem repaints). Layout com flex/grid para organização visual e mais centralizado ajudando na visibilidade.
+
+### Style Guide
+##### Componentes e palhetas alinhadas ao branding da Lacrei.
+
+### Gestão de Estado/Rotas
+##### Uso estratégico de hooks (useState, useRouter) para complexidade controlada. Páginas (apenas (index) "/" e "/about").
+
+### Responsividade + Imagens
+##### Abordagem mobile-first com breakpoints baseados em conteúdo. Imagens AVIF para redução de ~50% no tamanho (melhoria de LCP e performance).
+
+### Testes Unitários
+##### Foco em componentes críticos (Jest + Testing Library), validando: renderização, interações e roles ARIA para acessibilidade.
