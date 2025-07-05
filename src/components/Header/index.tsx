@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
-const Header = () => {
+function Header(){
   const [tokenVisible, setTokenVisible] = useState(false);
   const router = useRouter();
 

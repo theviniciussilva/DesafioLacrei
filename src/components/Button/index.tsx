@@ -1,22 +1,20 @@
-import { PropsWithChildren } from "react"
-import { ButtonDefault } from "./style"
+import { ButtonDefault } from "./style";
 
 type Props = {
-    title: string
-    description?: string
-    type: "submit" | "button" | "reset"
-    children?: React.ReactNode
-    onClick?: () => void 
-}
+  title?: string;
+  description?: string;
+  type?: "submit" | "button" | "reset";
+  children?: React.ReactNode;
+  onClick?: () => void;
+};
 
-const Button = ({title, description, type, children, onClick}: Props) => {
+const Button = ({ title, description, type, children, onClick }: Props) => {
+  return (
+    <ButtonDefault title={title} onClick={onClick} type={type}>
+      {description}
+      {children}
+    </ButtonDefault>
+  );
+};
 
-    return(
-        <ButtonDefault title={title} onClick={onClick} type={type}>
-            {description}
-            {children}
-        </ButtonDefault>
-    )
-}
-
-export default Button
+export default Button;

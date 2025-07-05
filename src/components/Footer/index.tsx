@@ -22,17 +22,17 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Nosso Propósito">
                 Nosso Propósito
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Missão, Visão e Valor">
                 Missão, Visão e Valor
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Acessibilidade">
                 Acessibilidade
               </a>
             </li>
@@ -40,12 +40,12 @@ const Footer = () => {
           <UlLink>
             <h2>Saúde</h2>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Buscar atendimento">
                 Buscar atendimento
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Oferecer atendimento ">
                 Oferecer atendimento
               </a>
             </li>
@@ -53,17 +53,17 @@ const Footer = () => {
           <UlLink>
             <h2>Segurança e Privacidade</h2>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title="Política de Privacidaderei Saúde">
                 Política de Privacidade
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title=" Termos de Uso">
                 Termos de Uso
               </a>
             </li>
             <li>
-              <a href="/" title="Lacrei Saúde">
+              <a href="/" title=" Direitos de Titular">
                 Direitos de Titular
               </a>
             </li>

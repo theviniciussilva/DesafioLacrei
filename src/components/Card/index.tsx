@@ -14,7 +14,7 @@ const Card = () => {
             src="/people-holding-flag.avif"
           />
         </div>
-        <CardAbout>
+        <CardAbout role="card">
           <h2>O que é a Lacrei Saúde?</h2>
           <p>
             O nosso papel é construir a conexão entre as pessoas da
