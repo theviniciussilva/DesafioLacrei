@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-interface ModalProps {
-  isVisible: boolean;
-}
-
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.gradient};
   padding: 24px;
@@ -134,7 +130,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Modal = styled.div<ModalProps>`
+export const Modal = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -143,5 +139,5 @@ export const Modal = styled.div<ModalProps>`
   width: 100%;
   height: 100vh;
   background-color: transparent;
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  display: block;
 `;

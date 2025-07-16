@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
-function Header(){
+function Header() {
   const [tokenVisible, setTokenVisible] = useState(false);
   const router = useRouter();
 
@@ -17,12 +17,14 @@ function Header(){
 
   return (
     <>
-      <Modal
-        isVisible={tokenVisible}
-        onClick={() => {
-          setTokenVisible(false);
-        }}
-      />
+      // No Header
+      {tokenVisible && (
+        <Modal
+          onClick={() => {
+            setTokenVisible(false);
+          }}
+        />
+      )}
       <Container>
         <div className="headerWrapper">
           <Link href="/">
@@ -76,10 +78,7 @@ function Header(){
                 </Button>
               </li>
               <li className="button_mobile">
-                <Button
-                  title="entrar"
-                  type="button"
-                >
+                <Button title="entrar" type="button">
                   <Image
                     alt="Icone de Pessoa"
                     src="/help.svg"
@@ -145,6 +144,6 @@ function Header(){
       </Container>
     </>
   );
-};
+}
 
 export default Header;
