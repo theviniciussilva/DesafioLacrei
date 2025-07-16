@@ -47,6 +47,9 @@ yarn build
   
 # Deploy na Vercel
 
+## Link Do Deploy
+https://desafio-lacrei-phi.vercel.app/
+
 ## O deploy na Vercel é automático via Git:
 
 Push para a branch `main` dispara deploy de produção</small>  
