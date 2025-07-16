@@ -81,9 +81,9 @@ npm test
 | Componentes     | Cobertura |
 |-----------------|-----------|
 | **Button**      | 100%      |
-| **Card**        | 96.82%    |
-| **Functions**   | 91.37%    |
-| **Lines**       | 94.39%    |
+| **Card**        | 100%      |
+| **Footer**      | 100%      |
+| **Header**      | 86%       |
 
 ![Captura de tela de 2025-07-05 04-54-24](https://github.com/user-attachments/assets/9da1207f-86b3-41e8-ab3b-b458bf5c9a5d)  
 
@@ -103,24 +103,50 @@ Clique em "..." → "Instant Rollback"
 
 
 
-## Rollback Funcional
+# Fluxo de Rollback no Vercel
+📋 Processo Step-by-Step
+## Etapa 1: Identificação do Problema
 
-### Usando Preview Deploys:
+Monitorar logs de erro no Vercel Dashboard
+Verificar métricas de performance
+Confirmar o deployment problemático
+Identificar a versão estável anterior
 
-Mantenha sempre um preview deployment estável
+## Etapa 2: Rollback Imediato
 
-Em caso de problemas:
+Acessar Vercel Dashboard
 
-Promova um preview estável para produção    
+Login na conta da equipe
+Navegar para o projeto afetado
+
+
+Localizar Deployment Estável
+
+Ir para aba "Deployments"
+Identificar último deployment funcional (status ✅)
+Verificar data/hora do deployment
+
+
+Executar Rollback
+
+Clicar no deployment estável
+Selecionar "Promote to Production"
+Confirmar a ação
+
+## Preview Deploys
+
+Sempre criar preview antes de merge para main
+Testar funcionalidades no ambiente de preview
+Validar com stakeholders quando necessário
 
 
 # Tomadas de Decições  
 
 ### Styled Components + SSR
-##### Configuração via Babel e _document.js para evitar FOUC e melhorar SEO. Plugin otimiza classes (minificação e determinismo).
+##### Configuração via Babel e _document.js e SSR para evitar e melhorar SEO.
 
 ### Tema Global
-##### Centralização de variáveis de design (cores/fontes) para consistência visual, manutenção simplificada e suporte a futuros temas (ex.: dark mode). Cores validadas para acessibilidade (WCAG).
+##### Centralização de variáveis de design (cores/fontes) todas as variáveis de cores forám utilizadas seguindo o style guide, apenas alterada os nomes para melhor entendimento no desinvolvimento para consistência visual, manutenção simplificada e suporte a futuros temas (ex.: dark mode). Cores validadas para acessibilidade (WCAG).
 
 ### Cabeçalho Fixo
 ##### position: fixed para navegação persistente durante scroll, melhorando usabilidade e performance (sem repaints). Layout com flex/grid para organização visual e mais centralizado ajudando na visibilidade.
