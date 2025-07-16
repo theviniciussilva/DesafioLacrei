@@ -17,7 +17,6 @@ function Header() {
 
   return (
     <>
-      // No Header
       {tokenVisible && (
         <Modal
           onClick={() => {
