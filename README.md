@@ -143,7 +143,7 @@ Validar com stakeholders quando necessário
 # Tomadas de Decições  
 
 ### Styled Components + SSR
-##### Configuração via Babel e _document.js para evitar FOUC e melhorar SEO. Plugin otimiza classes (minificação e determinismo).
+##### Configuração via Babel e _document.js e SSR para evitar e melhorar SEO.
 
 ### Tema Global
 ##### Centralização de variáveis de design (cores/fontes) todas as variáveis de cores forám utilizadas seguindo o style guide, apenas alterada os nomes para melhor entendimento no desinvolvimento para consistência visual, manutenção simplificada e suporte a futuros temas (ex.: dark mode). Cores validadas para acessibilidade (WCAG).
