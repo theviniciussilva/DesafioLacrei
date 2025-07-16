@@ -53,6 +53,18 @@ Push para a branch `main` dispara deploy de produção</small>
 
 Push para outras branches cria um Preview deployment  
 
+# Acessibilidade e Desempenho
+
+##### Desktop                                                                                                                              
+<img width="486" height="435" alt="image" src="https://github.com/user-attachments/assets/153f0abe-ab7b-486c-bc1e-f1cb7e1d5766" />  
+
+##### Mobile
+<img width="469" height="439" alt="image" src="https://github.com/user-attachments/assets/d8c9638d-0eda-446c-a4fb-60cf3545ef13" />
+
+
+
+
+
 # 🧪 Testes
 
 ## Executando Testes
@@ -66,10 +78,10 @@ npm test
 
 ## 📊 Test Coverage
 
-| Categoria       | Cobertura |
+| Componentes     | Cobertura |
 |-----------------|-----------|
-| **Statements**  | 94.39%    |
-| **Branches**    | 96.82%    |
+| **Button**      | 100%      |
+| **Card**        | 96.82%    |
 | **Functions**   | 91.37%    |
 | **Lines**       | 94.39%    |
 
